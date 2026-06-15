@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Software projects by Prithik Nataraj — web apps, APIs, hackathons, and full-stack builds">
+  <title>Projects | Prithik Nataraj</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="projects">
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container reveal">
+        <p class="eyebrow">Portfolio</p>
+        <h1 class="page-hero__title">Projects</h1>
+        <p class="page-hero__subtitle">Web apps, APIs, and software I've built — often faster with AI-assisted development.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="page-notice reveal">
+          <a href="index.html">← Back to Home</a> · Home shows your <strong>top 3 projects</strong>. List everything else here.
+        </p>
+        <div class="filter-bar reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter-bar__btn filter-bar__btn--active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-bar__btn" type="button" data-filter="hackathon" role="tab" aria-selected="false">Hackathon</button>
+          <button class="filter-bar__btn" type="button" data-filter="academic" role="tab" aria-selected="false">Academic</button>
+          <button class="filter-bar__btn" type="button" data-filter="personal" role="tab" aria-selected="false">Personal</button>
+          <button class="filter-bar__btn" type="button" data-filter="internship" role="tab" aria-selected="false">Internship</button>
+        </div>
+
+        <div class="card-grid" id="project-grid">
+
+          <article class="project-card tilt-card reveal" data-category="hackathon">
+            <span class="project-card__type">Hackathon</span>
+            <h2 class="project-card__title">Project Name One</h2>
+            <p class="project-card__desc">What it does, your role, stack, and outcome. Mention if AI tools helped you ship in time.</p>
+            <ul class="project-card__tags">
+              <li>Python</li><li>React</li><li>PostgreSQL</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal reveal--delay" data-category="academic">
+            <span class="project-card__type">Academic</span>
+            <h2 class="project-card__title">College Major / Mini Project</h2>
+            <p class="project-card__desc">Description with semester, guide, and technologies used.</p>
+            <ul class="project-card__tags">
+              <li>Java</li><li>MySQL</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="#" target="_blank" rel="noopener noreferrer">Report</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal reveal--delay-2" data-category="personal">
+            <span class="project-card__type">Personal</span>
+            <h2 class="project-card__title">Side Project Name</h2>
+            <p class="project-card__desc">Something you built to learn or solve a real problem.</p>
+            <ul class="project-card__tags">
+              <li>Node.js</li><li>React</li><li>MongoDB</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card reveal" data-category="personal">
+            <span class="project-card__type">Personal · API</span>
+            <h2 class="project-card__title">REST API Project</h2>
+            <p class="project-card__desc">Backend service with auth, database, and deployment.</p>
+            <ul class="project-card__tags">
+              <li>Python</li><li>FastAPI</li><li>Docker</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+</html>

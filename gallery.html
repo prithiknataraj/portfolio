@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photo gallery — hackathons, events, and campus life — Prithik Nataraj">
+  <title>Gallery | Prithik Nataraj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery">
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container reveal">
+        <p class="eyebrow">Visual Proof</p>
+        <h1 class="page-hero__title">Gallery</h1>
+        <p class="page-hero__subtitle">Hackathon moments, team photos, award ceremonies, and event highlights. Click any image to enlarge.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="page-notice reveal">
+          <a href="index.html">← Back to Home</a> · Optional page — event photos and hackathon moments. Lowest priority for recruiters.
+        </p>
+        <div class="filter-bar reveal" role="tablist" aria-label="Filter gallery">
+          <button class="filter-bar__btn filter-bar__btn--active" type="button" data-filter="all" data-filter-group="gallery" role="tab" aria-selected="true">All</button>
+          <button class="filter-bar__btn" type="button" data-filter="hackathon" data-filter-group="gallery" role="tab" aria-selected="false">Hackathons</button>
+          <button class="filter-bar__btn" type="button" data-filter="awards" data-filter-group="gallery" role="tab" aria-selected="false">Awards</button>
+          <button class="filter-bar__btn" type="button" data-filter="college" data-filter-group="gallery" role="tab" aria-selected="false">College</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+
+          <!-- Replace placeholder divs with real images:
+               <figure class="gallery-item" data-category="hackathon">
+                 <img src="assets/images/gallery/hackathon1.jpg" alt="Team at XYZ Hackathon 2024" loading="lazy">
+                 <figcaption>XYZ Hackathon 2024 — Winning team</figcaption>
+               </figure>
+          -->
+
+          <figure class="gallery-item reveal" data-category="college">
+            <img src="assets/images/gallery/evening-outdoor.png" alt="Prithik Nataraj — evening city portrait" loading="lazy">
+            <figcaption>Evening portrait · Pune</figcaption>
+          </figure>
+
+          <figure class="gallery-item reveal reveal--delay" data-category="college">
+            <img src="assets/images/gallery/casual-cafe.png" alt="Prithik Nataraj — casual" loading="lazy">
+            <figcaption>Casual · cafe moment</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item--placeholder reveal reveal--delay-2" data-category="hackathon">
+            <div class="gallery-item__placeholder" aria-hidden="true">📷</div>
+            <figcaption>Hackathon photos — coming soon</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item--placeholder reveal" data-category="college">
+            <div class="gallery-item__placeholder" aria-hidden="true">🎓</div>
+            <figcaption>College events — coming soon</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item--placeholder reveal reveal--delay" data-category="awards">
+            <div class="gallery-item__placeholder" aria-hidden="true">🏆</div>
+            <figcaption>Award ceremony — coming soon</figcaption>
+          </figure>
+
+          <figure class="gallery-item gallery-item--placeholder reveal reveal--delay-2" data-category="awards">
+            <div class="gallery-item__placeholder" aria-hidden="true">📜</div>
+            <figcaption>Certificates on stage — coming soon</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox__close" type="button" id="lightbox-close" aria-label="Close preview">×</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

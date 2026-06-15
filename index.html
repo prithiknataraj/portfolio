@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prithik Nataraj — Software Developer. Builds reliable software using modern tools and AI-assisted development.">
+  <meta property="og:title" content="Prithik Nataraj | Software Developer">
+  <meta property="og:description" content="Portfolio of software projects, hackathons, and a developer who ships faster with AI tools.">
+  <meta property="og:image" content="assets/images/profile.png">
+  <title>Prithik Nataraj | Software Developer</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <div id="site-header"></div>
+
+  <main id="main">
+
+    <section class="hero">
+      <canvas class="particle-canvas" id="particle-canvas" aria-hidden="true"></canvas>
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <span class="hero__badge hero__badge--pulse">◆ Software Developer · AI-Assisted Workflow</span>
+          <p class="eyebrow hero__status">
+            <span class="hero__status-dot"></span>
+            Software Developer @ Avalara · Pune
+          </p>
+          <h1 class="hero__name hero__name--gradient hero__name--split">Prithik Nataraj</h1>
+          <p class="hero__title">
+            <span id="typed-text" aria-live="polite">Software Developer</span><span class="hero__cursor" aria-hidden="true">|</span>
+          </p>
+          <p class="hero__summary">
+            I build web apps, backend services, and data pipelines at Avalara — across Python, SQL,
+            AWS, Terraform, PySpark, and React. These days I lean heavily on AI tools to design,
+            implement, and ship production software faster.
+          </p>
+          <div class="hero__actions">
+            <a href="#featured" class="btn btn--primary btn-magnetic">See My Work</a>
+            <a href="assets/resume/Prithik_Nataraj_Resume.pdf" class="btn btn--secondary btn-magnetic" download>Download Resume</a>
+            <a href="contact.html" class="btn btn--ghost">Contact</a>
+          </div>
+        </div>
+        <div class="hero__aside reveal reveal--delay">
+          <div class="dev-terminal tilt-card" id="dev-terminal">
+            <div class="dev-terminal__bar">
+              <span class="dev-terminal__dot dev-terminal__dot--red"></span>
+              <span class="dev-terminal__dot dev-terminal__dot--yellow"></span>
+              <span class="dev-terminal__dot dev-terminal__dot--green"></span>
+              <span class="dev-terminal__title">prithik@dev ~ portfolio</span>
+            </div>
+            <div class="dev-terminal__body" id="terminal-output" aria-live="polite"></div>
+          </div>
+          <div class="hero__photo" id="hero-photo">
+            <img src="assets/images/profile.png" alt="Prithik Nataraj" width="320" height="320" loading="eager">
+          </div>
+          <ul class="hero__stats tilt-card" aria-label="Quick highlights">
+            <li>
+              <span class="hero__stat-value" data-count="15" data-suffix="+">0+</span>
+              <span class="hero__stat-label">Projects Built</span>
+            </li>
+            <li>
+              <span class="hero__stat-value" data-count="8" data-suffix="+">0+</span>
+              <span class="hero__stat-label">Hackathons</span>
+            </li>
+            <li>
+              <span class="hero__stat-value hero__stat-value--text">Pune</span>
+              <span class="hero__stat-label">Based in</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How you work — AI as tooling, not identity -->
+    <section class="section section--alt section--glow" id="ai-workflow">
+      <div class="container">
+        <header class="section__header section__header--center reveal">
+          <p class="eyebrow">My Edge</p>
+          <h2 class="section__title">How I Use AI to Build Software</h2>
+          <p class="section__subtitle">
+            I don't build ML models — I use AI tools to write better code, solve problems faster,
+            and deliver production-ready software.
+          </p>
+        </header>
+        <div class="ai-capabilities reveal-stagger">
+          <article class="ai-capability tilt-card reveal">
+            <div class="ai-capability__icon" aria-hidden="true">⚡</div>
+            <h3 class="ai-capability__title">Faster Development</h3>
+            <p class="ai-capability__text">
+              AI-assisted coding for boilerplate, refactors, and feature scaffolding — so I focus on logic and architecture.
+            </p>
+            <div class="ai-capability__tools">
+              <span>Cursor</span><span>GitHub Copilot</span><span>ChatGPT</span>
+            </div>
+          </article>
+          <article class="ai-capability tilt-card reveal reveal--delay">
+            <div class="ai-capability__icon" aria-hidden="true">🔍</div>
+            <h3 class="ai-capability__title">Debug &amp; Problem Solving</h3>
+            <p class="ai-capability__text">
+              Trace errors, understand unfamiliar code, and find solutions quickly when I'm stuck or under deadline.
+            </p>
+            <div class="ai-capability__tools">
+              <span>AI pair programming</span><span>Stack traces</span><span>Docs lookup</span>
+            </div>
+          </article>
+          <article class="ai-capability tilt-card reveal reveal--delay-2">
+            <div class="ai-capability__icon" aria-hidden="true">📚</div>
+            <h3 class="ai-capability__title">Learn &amp; Adapt</h3>
+            <p class="ai-capability__text">
+              Pick up new frameworks, APIs, and patterns fast — especially useful in hackathons and tight sprints.
+            </p>
+            <div class="ai-capability__tools">
+              <span>New tech</span><span>APIs</span><span>Best practices</span>
+            </div>
+          </article>
+          <article class="ai-capability tilt-card reveal">
+            <div class="ai-capability__icon" aria-hidden="true">✅</div>
+            <h3 class="ai-capability__title">Quality &amp; Delivery</h3>
+            <p class="ai-capability__text">
+              Draft tests, documentation, and code reviews with AI help — then I verify, refine, and own the output.
+            </p>
+            <div class="ai-capability__tools">
+              <span>Unit tests</span><span>READMEs</span><span>Code review</span>
+            </div>
+          </article>
+        </div>
+        <div class="ai-pipeline reveal" aria-label="Software development workflow">
+          <span class="ai-pipeline__step">Plan</span>
+          <span class="ai-pipeline__arrow" aria-hidden="true">→</span>
+          <span class="ai-pipeline__step">Build</span>
+          <span class="ai-pipeline__arrow" aria-hidden="true">→</span>
+          <span class="ai-pipeline__step">Test</span>
+          <span class="ai-pipeline__arrow" aria-hidden="true">→</span>
+          <span class="ai-pipeline__step">Deploy</span>
+          <span class="ai-pipeline__arrow" aria-hidden="true">→</span>
+          <span class="ai-pipeline__step">Iterate</span>
+        </div>
+        <p class="section__cta reveal" style="margin-top:1.5rem;font-size:0.9rem;color:var(--color-text-muted);text-align:center;">
+          AI accelerates each step — the engineering decisions and final code are mine.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about about--home">
+          <div class="about__main reveal">
+            <p class="eyebrow">About</p>
+            <h2 class="section__title">Software Developer @ Avalara</h2>
+            <p class="lead">
+              I joined Avalara as an intern in January 2025, completed a six-month internship,
+              and moved to full-time in July 2025. I work on web applications, backend functionality,
+              and data handling — with experience across backend systems, frontend development,
+              and cloud infrastructure.
+            </p>
+            <p class="about__oneline">
+              B.Tech IT graduate (2025) from SSN College of Engineering, Chennai. Comfortable
+              with Python, SQL, AWS, Terraform, PySpark, and React — and I use AI-assisted
+              development daily to move faster without cutting corners on quality.
+            </p>
+          </div>
+          <aside class="about__highlights reveal reveal--delay">
+            <h3 class="about__highlights-title">At a Glance</h3>
+            <dl class="about__facts">
+              <div><dt>Role</dt><dd>Software Developer @ Avalara</dd></div>
+              <div><dt>Native</dt><dd>Erode, Tamil Nadu</dd></div>
+              <div><dt>College</dt><dd>SSN Chennai · B.Tech IT '25</dd></div>
+              <div><dt>Currently</dt><dd>Pune, Maharashtra</dd></div>
+              <div><dt>Stack</dt><dd>Python · SQL · AWS · React</dd></div>
+              <div><dt>Relocate</dt><dd>Yes · Open to move</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="featured">
+      <div class="container">
+        <header class="section__header reveal">
+          <p class="eyebrow">Best Work</p>
+          <h2 class="section__title">Top 3 Projects</h2>
+          <p class="section__subtitle">Strongest software builds. Full list on the Projects page.</p>
+        </header>
+        <div class="preview-grid preview-grid--featured reveal-stagger">
+          <article class="preview-card preview-card--featured tilt-card reveal">
+            <span class="preview-card__tag">#1 · Hackathon</span>
+            <h3 class="preview-card__title">Your Best Project Name</h3>
+            <p class="preview-card__text">
+              What the app does, stack used, and outcome — e.g. shipped in 24h, 1st place, X users.
+            </p>
+            <ul class="preview-card__tags"><li>Python</li><li>React</li><li>PostgreSQL</li></ul>
+            <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </article>
+          <article class="preview-card preview-card--featured tilt-card reveal reveal--delay">
+            <span class="preview-card__tag">#2 · Full-Stack</span>
+            <h3 class="preview-card__title">Second Best Project</h3>
+            <p class="preview-card__text">Web app or API you built end-to-end. Mention AI tools if they helped you ship faster.</p>
+            <ul class="preview-card__tags"><li>Node.js</li><li>React</li><li>MongoDB</li></ul>
+            <a href="#" target="_blank" rel="noopener noreferrer">Live demo →</a>
+          </article>
+          <article class="preview-card preview-card--featured tilt-card reveal reveal--delay-2">
+            <span class="preview-card__tag">#3 · Backend</span>
+            <h3 class="preview-card__title">Third Best Project</h3>
+            <p class="preview-card__text">Academic or personal project — focus on problem solved and tech choices.</p>
+            <ul class="preview-card__tags"><li>Python</li><li>Flask</li><li>SQL</li></ul>
+            <a href="#" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </article>
+        </div>
+        <p class="section__cta reveal">
+          <a href="projects.html" class="btn btn--primary">View all projects →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="snapshot-card snapshot-card--accent reveal">
+          <div class="snapshot-card__content">
+            <p class="eyebrow">Top Achievement</p>
+            <h2 class="snapshot-card__title">🏆 Your Best Award or Hackathon Win</h2>
+            <p class="snapshot-card__text">
+              One line — competition result, certification, or standout recognition.
+            </p>
+          </div>
+          <a href="achievements.html" class="btn btn--secondary btn--small">All awards &amp; certs →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section__header section__header--center reveal">
+          <p class="eyebrow">Tech Stack</p>
+          <h2 class="section__title">What I Build With</h2>
+        </header>
+        <div class="marquee reveal" aria-hidden="true">
+          <div class="marquee__track">
+            <span>Python</span><span>SQL</span><span>AWS</span><span>Terraform</span><span>PySpark</span><span>React</span><span>Git</span><span>REST APIs</span><span>Data Pipelines</span><span>Web Apps</span>
+            <span>Python</span><span>SQL</span><span>AWS</span><span>Terraform</span><span>PySpark</span><span>React</span><span>Git</span><span>REST APIs</span><span>Data Pipelines</span><span>Web Apps</span>
+          </div>
+        </div>
+        <header class="section__header section__header--center reveal" style="margin-top:2rem;margin-bottom:1rem;">
+          <p class="eyebrow">AI Tools I Use</p>
+          <h2 class="section__title" style="font-size:1.25rem;">Developer Productivity</h2>
+        </header>
+        <div class="marquee marquee--reverse reveal" aria-hidden="true">
+          <div class="marquee__track">
+            <span class="marquee__tag--ai">Cursor</span><span class="marquee__tag--ai">GitHub Copilot</span><span class="marquee__tag--ai">ChatGPT</span><span class="marquee__tag--ai">Claude</span><span class="marquee__tag--ai">AI pair programming</span>
+            <span class="marquee__tag--ai">Cursor</span><span class="marquee__tag--ai">GitHub Copilot</span><span class="marquee__tag--ai">ChatGPT</span><span class="marquee__tag--ai">Claude</span><span class="marquee__tag--ai">AI pair programming</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="snapshot-card reveal">
+          <div class="snapshot-card__content">
+            <p class="eyebrow">Education</p>
+            <h2 class="snapshot-card__title">B.Tech IT — SSN College of Engineering</h2>
+            <p class="snapshot-card__text">
+              Graduated <strong>2025</strong> · Anna University affiliated · NAAC A+ accredited ·
+              NIRF Engineering #47 (2025). CGPA <strong>X.XX / 10</strong> — marksheets on the Education page.
+            </p>
+          </div>
+          <a href="education.html" class="btn btn--secondary btn--small">Marks &amp; marksheets →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section explore-more">
+      <div class="container">
+        <header class="section__header section__header--center reveal">
+          <p class="eyebrow">Full Portfolio</p>
+          <h2 class="section__title">Explore More</h2>
+        </header>
+        <nav class="explore-grid reveal-stagger reveal" aria-label="Portfolio pages">
+          <a href="projects.html" class="explore-link tilt-card">
+            <span class="explore-link__label">All Projects</span>
+            <span class="explore-link__desc">Every app, API &amp; build</span>
+          </a>
+          <a href="hackathons.html" class="explore-link tilt-card">
+            <span class="explore-link__label">Hackathons</span>
+            <span class="explore-link__desc">24–48h software sprints</span>
+          </a>
+          <a href="achievements.html" class="explore-link tilt-card">
+            <span class="explore-link__label">Achievements</span>
+            <span class="explore-link__desc">Certs, awards &amp; wins</span>
+          </a>
+          <a href="education.html" class="explore-link tilt-card">
+            <span class="explore-link__label">Education</span>
+            <span class="explore-link__desc">Academic record &amp; marksheets</span>
+          </a>
+          <a href="gallery.html" class="explore-link tilt-card">
+            <span class="explore-link__label">Gallery</span>
+            <span class="explore-link__desc">Event &amp; team photos</span>
+          </a>
+          <a href="contact.html" class="explore-link tilt-card">
+            <span class="explore-link__label">Contact</span>
+            <span class="explore-link__desc">Email · GitHub · resume</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section section--cta home-contact">
+      <div class="container home-contact__inner reveal">
+        <h2 class="section__title">Get in touch</h2>
+        <p class="section__subtitle">This site is my personal portfolio — not actively job hunting, but happy to connect.</p>
+        <div class="home-contact__actions">
+          <a href="mailto:prithik2609@gmail.com" class="btn btn--primary">prithik2609@gmail.com</a>
+          <a href="assets/resume/Prithik_Nataraj_Resume.pdf" class="btn btn--secondary" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
