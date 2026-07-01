@@ -53,42 +53,7 @@ if (typedEl && !prefersReducedMotion) {
   typeEffect();
 }
 
-const statElements = document.querySelectorAll("[data-count]");
-
-function animateCounter(el) {
-  const target = parseInt(el.dataset.count, 10);
-  const suffix = el.dataset.suffix || "";
-  const duration = 1500;
-  const start = performance.now();
-
-  function update(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = `${Math.round(eased * target)}${suffix}`;
-    if (progress < 1) requestAnimationFrame(update);
-  }
-
-  requestAnimationFrame(update);
-}
-
-if (statElements.length && !prefersReducedMotion) {
-  const statsObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-  statElements.forEach((el) => statsObserver.observe(el));
-} else {
-  statElements.forEach((el) => {
-    el.textContent = `${el.dataset.count}${el.dataset.suffix || ""}`;
-  });
-}
+// Stat counters are handled globally in main.js
 
 const heroPhoto = document.getElementById("hero-photo");
 if (heroPhoto && !prefersReducedMotion) {

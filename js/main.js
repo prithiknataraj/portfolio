@@ -16,6 +16,7 @@ function initNav() {
     navToggle.classList.toggle("nav__toggle--open", isOpen);
     navToggle.setAttribute("aria-expanded", isOpen);
     navToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    document.body.classList.toggle("nav-open", isOpen);
   });
 
   navLinks.forEach((link) => {
@@ -24,6 +25,7 @@ function initNav() {
       navToggle.classList.remove("nav__toggle--open");
       navToggle.setAttribute("aria-expanded", "false");
       navToggle.setAttribute("aria-label", "Open menu");
+      document.body.classList.remove("nav-open");
     });
   });
 }
@@ -76,6 +78,73 @@ if (prefersReducedMotion) {
     { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
   );
   revealElements.forEach((el) => revealObserver.observe(el));
+}
+
+// Animated stat counters (any page with [data-count] elements)
+const statElements = document.querySelectorAll("[data-count]");
+
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count, 10);
+  const suffix = el.dataset.suffix || "";
+  const duration = 1500;
+  const start = performance.now();
+
+  function update(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = `${Math.round(eased * target)}${suffix}`;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
+}
+
+if (statElements.length) {
+  if (prefersReducedMotion) {
+    statElements.forEach((el) => {
+      el.textContent = `${el.dataset.count}${el.dataset.suffix || ""}`;
+    });
+  } else {
+    const statsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    statElements.forEach((el) => statsObserver.observe(el));
+  }
+}
+
+// Page-exit transition on internal navigation
+if (!prefersReducedMotion) {
+  document.addEventListener("click", (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
+    const link = e.target.closest("a[href]");
+    if (!link || link.target === "_blank" || link.hasAttribute("download")) return;
+
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch {
+      return;
+    }
+    if (url.origin !== window.location.origin) return;
+
+    e.preventDefault();
+    document.body.classList.add("page-exit");
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 250);
+  });
 }
 
 // Copy email

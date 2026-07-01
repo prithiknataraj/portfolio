@@ -302,7 +302,11 @@ ul {
 .nav__toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: none;
   cursor: pointer;
@@ -549,6 +553,8 @@ ul {
 }
 
 .hero__photo img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 280px;
   margin: 0 auto;
@@ -1303,16 +1309,22 @@ a.contact__card:hover {
     top: var(--header-height);
     left: 0;
     right: 0;
+    height: calc(100vh - var(--header-height));
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     background: var(--color-bg-elevated);
     border-bottom: 1px solid var(--color-border);
     padding: 1rem var(--spacing);
+    overflow-y: auto;
     transform: translateY(-120%);
     opacity: 0;
     pointer-events: none;
     transition: transform var(--transition), opacity var(--transition);
+  }
+
+  body.nav-open {
+    overflow: hidden;
   }
 
   .nav__links--open {
@@ -2549,6 +2561,190 @@ a.contact__card:hover {
   }
 }
 
+/* ============================================
+   Sitewide neural-network background
+   ============================================ */
+
+.network-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============================================
+   Glassmorphism cards + animated gradient border
+   ============================================ */
+
+@keyframes borderFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.preview-card,
+.hub-card,
+.edu-card,
+.hackathon-card,
+.project-card,
+.award-card,
+.cert-card,
+.contact__card,
+.snapshot-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(17, 17, 24, 0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.preview-card::before,
+.hub-card::before,
+.edu-card::before,
+.hackathon-card::before,
+.project-card::before,
+.award-card::before,
+.cert-card::before,
+.contact__card::before,
+.snapshot-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-accent), var(--color-ai), var(--color-primary));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition);
+  animation: borderFlow 4s ease infinite;
+  pointer-events: none;
+}
+
+.preview-card:hover::before,
+.hub-card:hover::before,
+.edu-card:hover::before,
+.hackathon-card:hover::before,
+.project-card:hover::before,
+.award-card:hover::before,
+.cert-card:hover::before,
+.contact__card:hover::before,
+.snapshot-card:hover::before {
+  opacity: 1;
+}
+
+.preview-card::after,
+.hub-card::after,
+.edu-card::after,
+.hackathon-card::after,
+.project-card::after,
+.award-card::after,
+.cert-card::after,
+.contact__card::after,
+.snapshot-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+  transform: skewX(-20deg);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.preview-card:hover::after,
+.hub-card:hover::after,
+.edu-card:hover::after,
+.hackathon-card:hover::after,
+.project-card:hover::after,
+.award-card:hover::after,
+.cert-card:hover::after,
+.contact__card:hover::after,
+.snapshot-card:hover::after {
+  transform: translateX(400%) skewX(-20deg);
+}
+
+/* ============================================
+   Hero photo — animated gradient halo ring
+   ============================================ */
+
+.hero__photo {
+  position: relative;
+}
+
+.hero__photo::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: calc(var(--radius-lg) + 6px);
+  padding: 3px;
+  background: linear-gradient(120deg, var(--color-primary), var(--color-accent), var(--color-ai), var(--color-primary));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderFlow 5s ease infinite;
+  pointer-events: none;
+}
+
+/* ============================================
+   Achievement / win badge glow
+   ============================================ */
+
+.hackathon-card__result--win {
+  animation: winPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes winPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(34, 197, 94, 0); }
+  50% { box-shadow: 0 0 14px rgba(34, 197, 94, 0.55); }
+}
+
+/* ============================================
+   Page hero stat chips (secondary pages)
+   ============================================ */
+
+.page-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.page-hero__stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-hero__stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   Page-exit transition
+   ============================================ */
+
+body {
+  transition: opacity 0.25s ease;
+}
+
+body.page-exit {
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee__track {
     animation: none;
@@ -2559,8 +2755,27 @@ a.contact__card:hover {
 
   .cursor-spotlight,
   .cursor-dot,
-  .particle-canvas {
+  .particle-canvas,
+  .network-bg {
     display: none !important;
+  }
+
+  .preview-card::before,
+  .hub-card::before,
+  .edu-card::before,
+  .hackathon-card::before,
+  .project-card::before,
+  .award-card::before,
+  .cert-card::before,
+  .contact__card::before,
+  .snapshot-card::before,
+  .hero__photo::before,
+  .hackathon-card__result--win {
+    animation: none;
+  }
+
+  body {
+    transition: none;
   }
 
   .hero__name--split .hero__letter {
