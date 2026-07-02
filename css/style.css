@@ -10,12 +10,13 @@
   --color-bg-card: #111118;
   --color-bg-alt: #0a0a10;
   --color-text: #f1f5f9;
-  --color-text-muted: #94a3b8;
-  --color-text-subtle: #64748b;
+  --color-text-muted: #a3b3cc;
+  --color-text-subtle: #78889f;
   --color-primary: #8b5cf6;
   --color-primary-hover: #a78bfa;
   --color-accent: #22d3ee;
   --color-ai: #c084fc;
+  --color-warm: #fbbf24;
   --color-glow: rgba(139, 92, 246, 0.45);
   --color-border: #1e1e2e;
   --color-border-light: #2d2d44;
@@ -879,6 +880,20 @@ ul {
   box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
 }
 
+.skill-tag:nth-child(3n+2):hover,
+.skill-tag:nth-child(3n+2):focus {
+  background: rgba(34, 211, 238, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.2);
+}
+
+.skill-tag:nth-child(3n):hover,
+.skill-tag:nth-child(3n):focus {
+  background: rgba(251, 191, 36, 0.15);
+  border-color: var(--color-warm);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
+}
+
 /* ============================================
    Projects
    ============================================ */
@@ -1723,9 +1738,19 @@ a.contact__card:hover {
 .project-card__tags li {
   font-size: 0.75rem;
   padding: 0.2rem 0.55rem;
-  background: var(--color-bg-alt);
+  background: rgba(139, 92, 246, 0.1);
   border-radius: 4px;
-  color: var(--color-text-subtle);
+  color: #c4b5fd;
+}
+
+.project-card__tags li:nth-child(3n+2) {
+  background: rgba(34, 211, 238, 0.1);
+  color: #67e8f9;
+}
+
+.project-card__tags li:nth-child(3n) {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fde68a;
 }
 
 .project-card__links {
@@ -2511,6 +2536,14 @@ a.contact__card:hover {
   border-color: var(--color-primary);
   color: var(--color-text);
   transform: scale(1.05);
+}
+
+.marquee__track span:nth-child(3n+2):hover {
+  border-color: var(--color-accent);
+}
+
+.marquee__track span:nth-child(3n):hover {
+  border-color: var(--color-warm);
 }
 
 .marquee__tag--ai {
