@@ -27,7 +27,7 @@ jobs:
       - name: Check required files
         run: |
           set -e
-          for page in index education projects hackathons achievements gallery contact; do
+          for page in index education experience projects hackathons achievements gallery contact; do
             test -f "${page}.html"
           done
           test -f css/style.css

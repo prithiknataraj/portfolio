@@ -8,6 +8,7 @@
   const navLinks = [
     { href: "index.html", label: "Home", page: "home" },
     { href: "education.html", label: "Education", page: "education" },
+    { href: "experience.html", label: "Experience", page: "experience" },
     { href: "projects.html", label: "Projects", page: "projects" },
     { href: "hackathons.html", label: "Hackathons", page: "hackathons" },
     { href: "achievements.html", label: "Achievements", page: "achievements" },
