@@ -487,7 +487,8 @@ ul {
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
+  padding-top: 1.5rem;
 }
 
 .hero__name {
